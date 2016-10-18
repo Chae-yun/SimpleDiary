@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
         int nowYear=calendar.get(Calendar.YEAR);
         int month=calendar.get(Calendar.MONTH)+1;
         int date=calendar.get(Calendar.DATE);
+        fileName=nowYear+"_"+(month+1)+"_"+date+".txt";
+        String content=readDiary(fileName);
+        editDiary.setText(content);
+        butSave.setEnabled(true);
 
         //DatePicker에 현재 날짜 설정
         datepic.init(nowYear, month, date, new DatePicker.OnDateChangedListener() {
